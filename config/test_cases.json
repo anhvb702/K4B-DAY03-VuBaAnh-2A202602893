@@ -1,0 +1,37 @@
+[
+  {
+    "id": "LT01",
+    "type": "single_tool_query",
+    "question": "Hãy tra cứu thông tin vận đơn có mã Order #1.",
+    "expected_behavior": "Agent nhận diện nhu cầu tra cứu, tự động phát sinh Tool Call 'tracking_delivery_id' với mã Order #1.",
+    "complexity": "Medium"
+  },
+  {
+    "id": "LT02",
+    "type": "edge_case_handling",
+    "question": "Hãy tra cứu thông tin vận đơn có mã Order #3.",
+    "expected_behavior": "Agent nhận diện nhu cầu tra cứu, gọi Tool 'tracking_delivery_id' và nhận kết quả NOT_FOUND, sau đó phản hồi lịch sự.",
+    "complexity": "Medium"
+  },
+  {
+    "id": "LT03",
+    "type": "multi_step_reasoning",
+    "question": "Hãy tra cứu thông tin vận đơn có mã Order #1 và cho tôi biết địa chỉ kho hàng của đơn hàng đó.",
+    "expected_behavior": "Agent nhận diện nhu cầu tra cứu địa chỉ kho hàng, phát sinh Tool Call 'tracking_goods_place' với mã Order #1.",
+    "complexity": "High"
+  },
+  {
+    "id": "LT04",
+    "type": "single_tool_query",
+    "question": "Tra cứu trạng thái đơn hàng có mã Order #1.",
+    "expected_behavior": "Agent nhận diện nhu cầu tra cứu trạng thái, tự động phát sinh Tool Call 'tracking_order_status' với mã Order #1.",
+    "complexity": "Medium"
+  },
+  {
+    "id": "LT05",
+    "type": "multi_step_reasoning",
+    "question": "Hãy cho tôi biết vị trí hàng hóa hiện tại và trạng thái của đơn hàng có mã Order #2.",
+    "expected_behavior": "Agent nhận diện nhu cầu tra cứu thông tin vị trí và trạng thái, gọi tool tra cứu đơn hàng Order #2 để phản hồi đầy đủ vị trí và trạng thái.",
+    "complexity": "High"
+  }
+]
